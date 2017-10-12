@@ -1,0 +1,24 @@
+.images_flex {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+
+	.image {
+		border: 1px #eee solid;
+		margin:5px;
+		padding: 5px;
+
+		&:hover {
+			border: 1px #ccc solid;
+		}
+	}
+
+	.avatar {
+		background: #fefefe;
+	}
+
+	.btn_block {
+		text-align: left;
+	}
+}
