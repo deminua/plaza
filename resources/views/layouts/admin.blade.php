@@ -44,8 +44,8 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Магазины <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Создать магазин</a></li>
-                  <li><a href="#">Все магазины</a></li>
+                  <li><a href="{{ route('admin.create.store') }}">Создать магазин</a></li>
+                  <li><a href="{{ route('admin.index.store') }}">Все магазины</a></li>
                 </ul>
               </li>
             </ul>

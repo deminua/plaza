@@ -26,11 +26,18 @@ Auth::routes();
 
 Route::prefix('admin')->group(function () {
 
-	Route::get('post', 'AdminController@create_post')->name('admin.create.post');
 	Route::get('/', 'AdminController@index_post')->name('admin.index.post');
+	Route::get('post', 'AdminController@create_post')->name('admin.create.post');
 	Route::get('post/edit', 'AdminController@edit_post')->name('admin.edit.post');
 	Route::get('post/delete', 'AdminController@delete_post')->name('admin.delete.post');
 	Route::post('post', 'AdminController@store_post')->name('admin.store.post');
+
+
+	Route::get('store/all', 'AdminController@index_store')->name('admin.index.store');
+	Route::get('store', 'AdminController@create_store')->name('admin.create.store');
+	Route::get('store/edit', 'AdminController@edit_store')->name('admin.edit.store');
+	Route::get('store/delete', 'AdminController@delete_store')->name('admin.delete.store');
+	Route::post('store', 'AdminController@store_store')->name('admin.store.store');
 
 	Route::get('image/{id}/{type}', ['uses'=>'ImageController@update','as'=> 'image.update']);
 
