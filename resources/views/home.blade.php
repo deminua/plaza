@@ -10,7 +10,7 @@
         <p class="subtext">Торговый комплекс «Плаза» дарит Вам скидки на покупки!</p>
         </div>
             @foreach($sales as $sale)
-            @if($sale->avatar->first())
+            @if(isset($sale->avatar->first()))
                 <article class="sale col-sm-6">
                     <a title="{{ $sale->name }}" href="#">
                         <img width="800" height="400" src="{{ route('imagecache', ['medium', $sale->avatar->first()->filename]) }}" class="img-responsive" alt="{{ $sale->name }}" />
@@ -34,7 +34,7 @@
     <div class="container">
         <article class="row text-center">
             @foreach($stores as $store)
-            @if($store->avatar->first())
+            @if(isset($store->avatar->first()))
                 <a title="{{ $store->name }}" href="#"><img src="{{ route('imagecache', ['logo', $store->avatar->first()->filename]) }}"></a>
             @endif
             @endforeach
