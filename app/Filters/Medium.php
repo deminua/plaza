@@ -13,11 +13,13 @@ class Medium implements FilterInterface
         #eturn $image->resizeCanvas(800, 800, 'center', false, 'ffffff');
         #eturn $image->resizeCanvas(600, 600, 'center');
 
-       $image->heighten(600, function ($constraint) {
+   return $image->fit(800, 400);
+
+/*       $image->heighten(600, function ($constraint) {
 		    $constraint->upsize();
 		});
 
-       return $image->resizeCanvas(600, 600, 'center');
+       return $image->resizeCanvas(600, 600, 'center');*/
  
     }
 }

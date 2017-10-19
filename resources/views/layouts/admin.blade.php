@@ -11,8 +11,8 @@
     <title>Admin</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+    <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('/css/admin.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -48,6 +48,9 @@
                   <li><a href="{{ route('admin.index.store') }}">Все магазины</a></li>
                 </ul>
               </li>
+
+                  <li><a href="{{ route('admin.slider.index') }}">Слайдер</a></li>
+
             </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -81,7 +84,24 @@
             </div>
         </nav>
 
+
+@if (session('danger'))
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="alert alert-warning alert-danger" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  {{ session('danger') }}
+</div>
+</div>
+</div>
+</div>
+@endif
+
         @yield('content')
+
+
+
     </div>
 
     <!-- Scripts -->

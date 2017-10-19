@@ -61,6 +61,12 @@ return [
             'visibility' => 'public',
         ],
 
+        'sliders' => [
+            'driver' => 'local',
+            'root' => public_path('storage/sliders'),
+            'visibility' => 'public',
+        ],
+        
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_KEY'),

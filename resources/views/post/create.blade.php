@@ -43,7 +43,7 @@
 
 	@foreach($post->images as $image)
 	<div class="image @if($image->avatar) avatar @endif">
-		<div><img src="{{ route('imagecache', ['small', $image->filename]) }}"></div>
+		<div><img src="{{ route('imagecache', ['logo', $image->filename]) }}"></div>
 		<div class="btn_block">
 			<a title="Выбрать/отменить аватар" class="btn_avatar" href="{{ route('image.update', [$image->id, 'avatar']) }}"><span class="glyphicon @if($image->avatar) glyphicon glyphicon-star @else glyphicon-star-empty @endif"></span></a>
 			<a onclick="return confirm('Вы уверены, что хотите удалить этот элемент?');" title="Удалить" class="btn_delete" href="{{ route('image.update', [$image->id, 'delete']) }}"><span class="glyphicon glyphicon-remove"></span></a>
@@ -58,6 +58,7 @@
     {!! Form::label('Изображение') !!}
     {!! Form::file('images[]', ['multiple']) !!}
 </div>
+
 
 <!-- <div class="form-group">
     {!! Form::label('confirmed', 'Опубликовано') !!}

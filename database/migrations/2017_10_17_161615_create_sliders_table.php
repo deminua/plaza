@@ -15,6 +15,13 @@ class CreateSlidersTable extends Migration
     {
         Schema::create('sliders', function (Blueprint $table) {
             $table->increments('id');
+            $table->text('name');
+            $table->text('url')->nullable();
+            $table->string('filename');
+            $table->integer('filesize');
+            $table->integer('sorting')->nullable();
+            $table->boolean('confirmed')->default(false);
+            $table->nullableMorphs('rowgable');
             $table->timestamps();
         });
     }

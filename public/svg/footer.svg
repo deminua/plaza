@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1900 70"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil2 {fill:#2F3D6B}
+    .fil0 {fill:#E31E24}
+    .fil1 {fill:#FFF000}
+   ]]>
+  </style>
+ </defs>
+ <g>
+  <metadata/>
+    <path class="fil0" d="M1928 47l1 2c1,3 -307,-32 -507,-28 -186,4 -317,17 -459,26 -98,7 -200,11 -330,8 -203,-5 -517,-27 -633,-29l0 -6c342,9 648,34 989,27 256,-15 701,-30 939,0z"/>
+    <path class="fil1" d="M1928 40l1 -4c1,-3 -173,25 -373,19 -298,-7 -598,-58 -896,-45 -245,10 -544,51 -660,54l0 7c208,-7 519,-48 849,-48 427,0 877,39 1079,17z"/>
+    <path class="fil2" d="M347 33c103,-9 213,-19 313,-23 160,-7 320,5 480,18 24,0 47,1 71,2 63,-4 132,-8 211,-9 90,-2 201,4 296,11 57,2 110,5 157,9 34,-4 54,-6 54,-5l0 -36 -1929 0 0 20c119,3 234,8 347,13z"/>
+ </g>
+</svg>

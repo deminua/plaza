@@ -17,6 +17,16 @@ class Post extends Model
 		'store_id'
     ];
 
+    // public function tags()
+    // {
+    //     return $this->morphToMany('App\Slider', 'rowgable');
+    // }
+
+    public function sliders()
+    {
+        return $this->morphMany('App\Slider', 'rowgable');
+    }
+
     public function images()
     {
         return $this->morphMany('App\Image', 'imagegable');

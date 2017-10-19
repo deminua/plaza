@@ -17,7 +17,11 @@ class Store extends Model
 		'confirmed'
     ];
 
-
+    public function sliders()
+    {
+        return $this->morphMany('App\Slider', 'rowgable');
+    }
+    
     public function images()
     {
         return $this->morphMany('App\Image', 'imagegable');
@@ -38,4 +42,8 @@ class Store extends Model
         return $this->belongsTo('App\Shop');
     }
 
+    public function posts()
+    {
+        return $this->hasMany('App\Post');
+    }
 }

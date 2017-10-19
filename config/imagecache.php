@@ -32,7 +32,8 @@ return array(
     */
     
     'paths' => array(
-        public_path('storage/images')
+        public_path('storage/images'),
+        public_path('storage/sliders')
         #public_path('upload'),
         #public_path('images')
     ),
@@ -64,6 +65,7 @@ return array(
         'small' => 'App\Filters\Small',
         'medium' => 'App\Filters\Medium',
         'large' => 'App\Filters\Large',
+        'logo' => 'App\Filters\Logo',
     ),
 
     /*

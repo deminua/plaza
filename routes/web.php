@@ -11,18 +11,15 @@
 |
 */
 
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.disable');
 });
 
+Route::get('index', 'HomeController@index')->name('index');
+
+
 Auth::routes();
-
-#Route::resource('admin', 'AdminController');
-#Route::get('admin/create/post', 'AdminController@create_post')->name('admin.create.post');
-#Route::get('admin/edit/post/{id}', 'AdminController@create_post')->name('admin.edit.post');
-
-#Route::get('admin/post', 'AdminController@create_post')->name('admin.create.post');
-#Route::post('admin/store/post', 'AdminController@store_post')->name('admin.store.post');
 
 Route::prefix('admin')->group(function () {
 
@@ -39,11 +36,11 @@ Route::prefix('admin')->group(function () {
 	Route::get('store/delete', 'AdminController@delete_store')->name('admin.delete.store');
 	Route::post('store', 'AdminController@store_store')->name('admin.store.store');
 
+	Route::get('slider', ['uses'=>'SlideController@index_admin','as'=> 'admin.slider.index']);
+	Route::get('slider/create', ['uses'=>'SlideController@create_slider','as'=> 'admin.slider.create']);
+	Route::post('slider', 'SlideController@store_slider')->name('admin.store.slider');
+	Route::get('slider/edit', 'SlideController@edit_slider')->name('admin.edit.slider');
+
 	Route::get('image/{id}/{type}', ['uses'=>'ImageController@update','as'=> 'image.update']);
 
 });
-
-
-
-
-#Route::get('/home', 'HomeController@index')->name('home');
