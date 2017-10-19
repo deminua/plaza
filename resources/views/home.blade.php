@@ -57,7 +57,7 @@
             @foreach($news as $new)
 
             <article class="col-sm-4">
-            @if($new->avatar->first())<a title="{{ $new->name }}" href="#"><img alt="{{ $new->name }}" src="{{ route('imagecache', ['medium', $sale->avatar->first()->filename]) }}" class="img-responsive"></a>@endif
+            @if(count($new->avatar) == 1)<a title="{{ $new->name }}" href="#"><img alt="{{ $new->name }}" src="{{ route('imagecache', ['medium', $sale->avatar->first()->filename]) }}" class="img-responsive"></a>@endif
             <h2><a href="#">{{ $new->name }}</a></h2>
             <p>{{ $new->description }}</p>
             <div class="info"><span class="left">{{ $new->store->floor->name }}, {{ $new->store->shop->name }}</span><span class="right">15.08.2017</span></div>
