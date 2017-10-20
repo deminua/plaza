@@ -26,7 +26,7 @@
 
 <section id="catalog">
     <div class="container-fluid line">
-        <h1>КАТАЛОГ МАГАЗИНОВ</h1>
+        <h1>Каталог магазинов</h1>
         <p class="subtext">Каталог всех магазинов с акциями и скидками</p>
     </div>
 

@@ -26,8 +26,8 @@ class HomeController extends Controller
     {
         $sliders = Slider::orderby('sorting', 'asc')->get();
         $stores = Store::with('avatar')->where('confirmed', true)->get();
-        $sales = Post::with('avatar')->where('confirmed', true)->where('category_id', 1)->limit(4)->get();
-        $news = Post::with('avatar', 'store', 'store.floor', 'store.shop')->where('confirmed', true)->where('category_id', 2)->limit(3)->get();
+        $sales = Post::with('avatar')->where('confirmed', true)->where('category_id', 1)->orderby('created_at', 'desc')->limit(4)->get();
+        $news = Post::with('avatar', 'store', 'store.floor', 'store.shop')->where('confirmed', true)->where('category_id', 2)->orderby('created_at', 'desc')->limit(3)->get();
         return view('home', compact('sliders', 'stores', 'sales', 'news'));
     }
 }

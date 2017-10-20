@@ -12,4 +12,8 @@ class Floor extends Model
 	// 	'name'
  //    ];
 
+    public function stores()
+    {
+        return $this->hasMany('App\Store');
+    }
 }

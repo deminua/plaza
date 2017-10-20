@@ -18,6 +18,7 @@ Route::get('/', function () {
 
 Route::get('index', 'HomeController@index')->name('index');
 
+Route::get('store', 'StoreController@index')->name('store.index');
 
 Auth::routes();
 

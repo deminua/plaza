@@ -80,7 +80,7 @@ class AdminController extends Controller
     public function index_store(Request $request)
     {
         $stores = Store::with('shop', 'avatar', 'floor');
-        $stores = $stores->orderby('updated_at', 'desc')->paginate(20);
+        $stores = $stores->orderby('created_at', 'desc')->paginate(40);
         return view('store.admin', compact('stores'));
     }
 
@@ -159,7 +159,7 @@ class AdminController extends Controller
             $store = Store::find($request->store_id);
             $title = $store->name;
         }
-        $posts = $posts->orderby('updated_at', 'desc')->paginate(20);
+        $posts = $posts->orderby('created_at', 'desc')->paginate(40);
         return view('post.admin', compact('posts', 'title'));
     }
 
