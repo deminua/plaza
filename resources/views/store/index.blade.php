@@ -21,19 +21,12 @@
 			<article class="col-xs-6 col-sm-4 col-md-3">
 
 			
-				<a class="brand" href="#">
+				<a class="brand" href="{{ route('store.show', ['id'=>$store->id]) }}">
 					<img alt="{{ $store->name }}" src="{{ route('imagecache', ['logo', $store->avatar->first()->filename]) }}">
 					@if($store->description)<p>{{ $store->description }}</p>@endif
 				</a>
-					<div style="position: absolute; right:15px; bottom:25px; background: #eee; font-size:8pt; padding: 2px 6px;">{{ $store->floor->name }}, {{ $shop->name }}</div>
+					<div class="floor_shop">{{ $store->floor->name }}, {{ $shop->name }}</div>
 			
-<!-- 				<div class="brand" style="min-height: 240px; margin-bottom: 25px; border:1px #eee solid;">
-					<div class="logo-container">
-						<a title="{{ $store->name }}" href="#"><img style="width:100%; padding:30px 30px 0px 30px;" alt="{{ $store->name }}" src="{{ route('imagecache', ['logo', $store->avatar->first()->filename]) }}"></a>
-					</div>
-					<div style="max-height: 120px; overflow: hidden; display:block; padding:30px 15px 0px 15px;">{{ $store->description }}</div>
-				</div> -->
-				<!-- <h1>{{ $store->name }}</h1> -->
 			</article>
 	@endif
 	@endforeach

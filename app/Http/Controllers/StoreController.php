@@ -22,22 +22,25 @@ class StoreController extends Controller
 		    return $stores->posts->count();
 		}, SORT_REGULAR, true);
 
-		#dd($stores);
-
-        #$stores = Store::with('avatar')->where('confirmed', true)->get();
         $shops = Shop::get();
         $floors = Floor::get();
-#with('store')->
 
-        #$collection = collect($stores);
-        #dd($collection[1]->groupBy('floor_id'));
-        #array_walk($stores, 'collect');
-        #array_walk($collection, 'collect');
-        #dd($collection);
-        #$grouped = $collection->groupBy('floor_id');
-        #$grouped->all();
-        #$grouped2 = $collection->groupBy('floor_id');
-        #dd($grouped);
        return view('store.index', compact('meta', 'stores', 'shops', 'floors'));
     }
+
+
+    public function show($id)
+    {
+
+    	$store = Store::find($id);
+    	
+    	$sales = Post::with('avatar')->where('confirmed', true)->where('category_id', 1)->where('store_id', $store->id)->orderby('created_at', 'desc')->get();
+        $news = Post::with('avatar', 'store', 'store.floor', 'store.shop')->where('confirmed', true)->where('category_id', 2)->where('store_id', $store->id)->orderby('created_at', 'desc')->get();
+
+    	$meta = [
+    		'title'=> $store->name,
+    	];
+		return view('store.show', compact('meta', 'store', 'sales', 'news'));
+    }
+
 }

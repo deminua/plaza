@@ -37,7 +37,7 @@
           </ul>
           <div class="menu-%d0%b2%d0%b5%d1%80%d1%85%d0%bd%d0%b5%d0%b5-%d0%bc%d0%b5%d0%bd%d1%8e-container"><ul id="menu-%d0%b2%d0%b5%d1%80%d1%85%d0%bd%d0%b5%d0%b5-%d0%bc%d0%b5%d0%bd%d1%8e" class="nav navbar-nav navbar-right navbar1"><li id="menu-item-80" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="/category/news/">Новости и события</a></li>
 <li id="menu-item-81" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-81"><a href="/category/sale/">Акции и скидки</a></li>
-<li id="menu-item-99" class="menu-item menu-item-type-post_type_archive menu-item-object-store menu-item-99"><a href="/store/">Магазины</a></li>
+<li><a href="{{ route('store.index') }}">Магазины</a></li>
 <li id="menu-item-83" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="/rent_and_advertisement/">Аренда и реклама</a></li>
 <li id="menu-item-82" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-82"><a href="/contacts/">Контакты</a></li>
 </ul></div>        </div>

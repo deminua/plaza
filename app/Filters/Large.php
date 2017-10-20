@@ -9,13 +9,19 @@ class Large implements FilterInterface
 {
     public function applyFilter(Image $image)
     {
-        #return $image->resize(1600, null)->insert('images/watermark.png');
 
-        $image->widen(1800, function ($constraint) {
-    			$constraint->upsize();
+
+		$image->resize(600, null, function ($constraint) {
+		    $constraint->aspectRatio();
 		});
+        return $image;
+       # return $image->resize(1600, null)->insert('images/watermark.png');
 
-		return $image->insert('images/watermark.png', 'bottom-right', 20, 20);
+  //       $image->widen(1800, function ($constraint) {
+  //   			$constraint->upsize();
+		// });
+
+		#return $image->insert('images/watermark.png', 'bottom-right', 20, 20);
 
     }
 }
