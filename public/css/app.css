@@ -8583,6 +8583,10 @@ a img {
   background: #eee;
 }
 
+#store_show #news {
+  background: none;
+}
+
 h1 {
   font-weight: 800;
   color: #000;
@@ -8794,5 +8798,19 @@ h1 {
   background: #eee;
   font-size: 8pt;
   padding: 2px 6px;
+}
+
+#galleryCarousel {
+  margin-bottom: 20px;
+}
+
+#galleryCarousel .carousel-inner > .item > img {
+  width: auto;
+  height: 600px;
+  max-height: 800px;
+}
+
+h2 {
+  font-size: 12pt;
 }
 

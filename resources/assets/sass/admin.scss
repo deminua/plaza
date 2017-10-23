@@ -1,10 +1,14 @@
 .images_flex {
+
+/*
 	align-items: flex-start;
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
+*/
 
 	.image {
+		display: inline-block;
 		border: 1px #eee solid;
 		margin:5px;
 		padding: 5px;

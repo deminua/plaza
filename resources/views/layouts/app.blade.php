@@ -61,7 +61,7 @@
 
 
     <!-- Scripts -->
-    <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js'></script>
+    <!-- <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js'></script> -->
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>

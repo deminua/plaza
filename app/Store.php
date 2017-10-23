@@ -26,6 +26,11 @@ class Store extends Model
     {
         return $this->morphMany('App\Image', 'imagegable');
     }
+    
+    public function gallery()
+    {
+        return $this->morphMany('App\Image', 'imagegable')->where('avatar', false);
+    }
 
     public function avatar()
     {

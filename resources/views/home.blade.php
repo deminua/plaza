@@ -12,7 +12,7 @@
             @foreach($sales as $sale)
             @if(count($sale->avatar) == 1)
                 <article class="sale col-sm-6">
-                    <a title="{{ $sale->name }}" href="#">
+                    <a title="{{ $sale->name }}" href="{{ route('store.show', ['id'=>$sale->store_id]) }}">
                         <img width="800" height="400" src="{{ route('imagecache', ['medium', $sale->avatar->first()->filename]) }}" class="img-responsive" alt="{{ $sale->name }}" />
                     </a>
                 </article>
@@ -35,13 +35,12 @@
         <article class="row text-center">
             @foreach($stores as $store)
             @if(count($store->avatar) == 1)
-                <a title="{{ $store->name }}" href="#"><img src="{{ route('imagecache', ['logo', $store->avatar->first()->filename]) }}"></a>
+                <a title="{{ $store->name }}" href="{{ route('store.show', ['id'=>$store->id]) }}"><img src="{{ route('imagecache', ['logo', $store->avatar->first()->filename]) }}"></a>
             @endif
             @endforeach
          </article>
     </div>
 </section>
-
 
 
 
@@ -56,16 +55,7 @@
 
             @foreach($news as $new)
 
-            <article class="col-sm-4">
-            @if(!empty($new->avatar->first()))
-                <a title="{{ $new->name }}" href="#">
-                    <img alt="{{ $new->name }}" src="{{ route('imagecache', ['medium', $new->avatar->first()->filename]) }}" class="img-responsive">
-                </a>
-            @endif
-            <h2><a href="#">{{ $new->name }}</a></h2>
-            <p>{{ $new->description }}</p>
-            <div class="info"><span class="left">{{ $new->store->floor->name }}, {{ $new->store->shop->name }}</span><span class="right">15.08.2017</span></div>
-            </article>
+              @include('news.item', ['class_name' => 'col-sm-4'])
 
             @endforeach     
 
