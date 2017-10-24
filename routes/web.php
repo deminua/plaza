@@ -12,14 +12,17 @@
 */
 
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('layouts.disable');
-});
+});*/
 
-Route::get('index', 'HomeController@index')->name('index');
+Route::get('/', 'HomeController@index')->name('index');
 
 Route::get('store', 'StoreController@index')->name('store.index');
 Route::get('store/{id}', 'StoreController@show')->name('store.show');
+
+Route::get('news', 'PostController@news')->name('news.index');
+Route::get('sale', 'PostController@sale')->name('sale.index');
 
 Auth::routes();
 

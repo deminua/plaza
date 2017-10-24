@@ -13,7 +13,7 @@
 		<div class="col-sm-3 col-sm-push-9" style="margin: 20px 0px 20px 0px;">
 					
 					<article>
-					<img style="width: 100%; opacity: 0.4" alt="{{ $store->name }}" src="{{ route('imagecache', ['large', $store->avatar->first()->filename]) }}">
+					@if($store->avatar->first())<img style="width: 100%; opacity: 0.4" alt="{{ $store->name }}" src="{{ route('imagecache', ['large', $store->avatar->first()->filename]) }}">@endif
 					
 					<div class="description" style="margin: 40px 0px 40px 0px;">
 						<h1>{{ $meta['title'] }}</h1>
@@ -44,9 +44,12 @@
 	            @foreach($sales as $sale)
 	            @if(count($sale->avatar) == 1)
 	                <article style="margin-bottom: 10px; margin-top: 10px;">
-	                    <a title="{{ $sale->name }}" href="#">
 	                        <img src="{{ route('imagecache', ['medium', $sale->avatar->first()->filename]) }}" class="img-responsive" alt="{{ $sale->name }}" />
-	                    </a>
+	                        <div style="float:right; font-size: 8pt;">{{ $sale->created_at->format('d.m.Y') }}</div>
+	                    	<h2>{{ $sale->name }}</h2>
+	                        <p>{!! nl2br($sale->description) !!}</p>
+	                        <hr>
+	                    
 	                </article>
 	            @endif
 	            @endforeach   
@@ -61,9 +64,9 @@
 					<article class="col-sm-12">
 						<h1>{{ $store->name }}</h1>
 						@if($store->content)
-							<div>{!! nl2br($store->content) !!}</div>
+							<div style="margin-bottom: 10vh;">{!! nl2br($store->content) !!}</div>
 						@else
-							<div style="text-align: center; margin: 20vh 0vh;">Полная информация о {{ $store->name }}</div>
+							<div style="text-align: center; margin: 20vh 0vh;">Полная информация о {{ $store->name }} на данный момент отсутствует.</div>
 						@endif
 					</article>
 
@@ -106,7 +109,7 @@
 
 </div>
 			@else
-			<div style="text-align: center; margin: 20vh 0vh;">Фотогалерея  {{ $store->name }}</div>
+			<div style="text-align: center; margin: 20vh 0vh;">Фотографий на данный момент нет.</div>
 			@endif
 		</article>
 	</div>

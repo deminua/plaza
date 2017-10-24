@@ -2,6 +2,7 @@
 
 @section('content')
 
+<div id="home">
 
 <section id="sale" class="container">
     <div class="row text-center">
@@ -63,6 +64,8 @@
         </div>
     </div>
 </section>
+
+</div>
 
 @endsection
 

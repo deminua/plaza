@@ -172,7 +172,7 @@ a, .navbar-toggle, .sales a header, .sales a content, .sales a content, a img {
 #sale {
     background: #fff;
 }
-#news {
+#home #news {
     background: #eee;
 }
 #store_show #news {
@@ -308,7 +308,7 @@ h1 {
 
 
     .brand {
-        display: flex; min-height: 240px; margin-bottom:25px; padding:20px 20px 0px 20px; border:1px #eee solid; flex-direction:column; justify-content:center; align-items:center;
+        display: flex; min-height: 260px; margin-bottom:25px; padding:20px 20px 0px 20px; border:1px #eee solid; flex-direction:column; justify-content:center; align-items:center;
         color: #000;
         text-decoration: none;
 
@@ -334,7 +334,6 @@ margin-bottom: 20px;
 
 .carousel-inner > .item > img {
   width: auto;
-  height: 600px;
   max-height: 800px;
 }
 
