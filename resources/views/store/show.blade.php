@@ -31,7 +31,7 @@
 							@include('news.item', ['class_name' => ''])
 						@endforeach
 					@else
-					<div style="text-align: center; margin: 20vh 0vh;">На данный момент новостей нет</div>
+					<div style="text-align: center; margin: 20px 0px;">На данный момент новостей нет</div>
 					@endif
 					</section>
 				
@@ -54,7 +54,7 @@
 	            @endif
 	            @endforeach   
 	        @else
-	        	<div style="text-align: center; margin: 20vh 0vh;">На данный момент акций и скидок нет, но скоро будут!</div>
+	        	<div style="text-align: center; margin: 20px 0px;">На данный момент акций и скидок нет, но скоро будут!</div>
             @endif
 
 		</div>
@@ -64,9 +64,9 @@
 					<article class="col-sm-12">
 						<h1>{{ $store->name }}</h1>
 						@if($store->content)
-							<div style="margin-bottom: 10vh;">{!! nl2br($store->content) !!}</div>
+							<div style="margin-bottom: 20px;">{!! nl2br($store->content) !!}</div>
 						@else
-							<div style="text-align: center; margin: 20vh 0vh;">Полная информация о {{ $store->name }} на данный момент отсутствует.</div>
+							<div style="text-align: center; margin: 20px 0px;">Полная информация о {{ $store->name }} на данный момент отсутствует.</div>
 						@endif
 					</article>
 
@@ -109,7 +109,7 @@
 
 </div>
 			@else
-			<div style="text-align: center; margin: 20vh 0vh;">Фотографий на данный момент нет.</div>
+			<div style="text-align: center; margin: 20px 0px;">Фотографий на данный момент нет.</div>
 			@endif
 		</article>
 	</div>
