@@ -74,20 +74,13 @@
 
 
 
-					<article class="col-sm-12">
-						<h1>{{ $store->name }}</h1>
-						@if($store->content)
-							<div style="margin-bottom: 25px">{!! nl2br($store->content) !!}</div>
-						@else
-							<div style="text-align: center; margin: 5vw 0px;">Полная информация о {{ $store->name }} на данный момент отсутствует.</div>
-						@endif
-					</article>
 
 
-		<article class="col-sm-12">
+			@if(count($store->gallery) >= 1)
+
+		<article class="col-sm-12" style="margin-bottom: 25px">
 			<h1>Галерея {{ $store->name }}</h1>
 			
-			@if(count($store->gallery) >= 1)
 
 <div id="galleryCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
@@ -121,10 +114,19 @@
   </a>
 
 </div>
-			@else
-			<div style="text-align: center; margin: 5vw 0px;">Фотографий на данный момент нет.</div>
-			@endif
 		</article>
+
+			@endif
+
+					<article class="col-sm-12">
+						<h1>{{ $store->name }}</h1>
+						@if($store->content)
+							<div style="margin-bottom: 25px">{!! nl2br($store->content) !!}</div>
+						@else
+							<div style="text-align: center; margin: 5vw 0px;">Полная информация о {{ $store->name }} на данный момент отсутствует.</div>
+						@endif
+					</article>
+
 	</div>
 
 </div>
