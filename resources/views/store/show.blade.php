@@ -44,7 +44,7 @@
 	            @foreach($sales as $sale)
 	            @if(count($sale->avatar) == 1)
 	                <article style="margin-bottom: 10px; margin-top: 10px;">
-	                        <img src="{{ route('imagecache', ['medium', $sale->avatar->first()->filename]) }}" class="img-responsive" alt="{{ $sale->name }}" />
+	                        <img width="100%" src="{{ route('imagecache', ['medium', $sale->avatar->first()->filename]) }}" class="img-responsive" alt="{{ $sale->name }}" />
 	                        <div style="float:right; font-size: 8pt;">{{ $sale->created_at->format('d.m.Y') }}</div>
 	                    	<h2>{{ $sale->name }}</h2>
 	                        <p>{!! nl2br($sale->description) !!}</p>
