@@ -77,7 +77,7 @@
 					<article class="col-sm-12">
 						<h1>{{ $store->name }}</h1>
 						@if($store->content)
-							<div style="margin-bottom: 5vw">{!! nl2br($store->content) !!}</div>
+							<div style="margin-bottom: 25px">{!! nl2br($store->content) !!}</div>
 						@else
 							<div style="text-align: center; margin: 5vw 0px;">Полная информация о {{ $store->name }} на данный момент отсутствует.</div>
 						@endif
