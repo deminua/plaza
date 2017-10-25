@@ -62,6 +62,7 @@ return array(
 */
 
     'templates' => array(
+        'prev' => 'App\Filters\Prev',
         'small' => 'App\Filters\Small',
         'medium' => 'App\Filters\Medium',
         'large' => 'App\Filters\Large',
