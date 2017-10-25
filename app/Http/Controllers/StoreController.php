@@ -34,13 +34,14 @@ class StoreController extends Controller
 
     	$store = Store::with('avatar', 'gallery')->find($id);
     	
-    	$sales = Post::with('avatar')->where('confirmed', true)->where('category_id', 1)->where('store_id', $store->id)->orderby('created_at', 'desc')->get();
-        $news = Post::with('avatar', 'store', 'store.floor', 'store.shop')->where('confirmed', true)->where('category_id', 2)->where('store_id', $store->id)->orderby('created_at', 'desc')->get();
+    	$sale = Post::with('avatar')->where('confirmed', true)->where('category_id', 1)->where('store_id', $store->id)->orderby('created_at', 'desc')->first();
+        $sales = Post::with('avatar')->where('confirmed', true)->where('category_id', 1)->where('store_id', $store->id)->orderby('created_at', 'desc')->skip(1)->limit(5)->get();
+        $news = Post::with('avatar', 'store', 'store.floor', 'store.shop')->where('confirmed', true)->where('category_id', 2)->where('store_id', $store->id)->orderby('created_at', 'desc')->limit(5)->get();
 
     	$meta = [
     		'title'=> $store->name,
     	];
-		return view('store.show', compact('meta', 'store', 'sales', 'news'));
+		return view('store.show', compact('meta', 'store', 'sale', 'sales', 'news'));
     }
 
 }

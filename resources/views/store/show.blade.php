@@ -12,7 +12,7 @@
 	<div class="row">
 		<div class="col-sm-3 col-sm-push-9">
 					
-					<article>
+					<article style="margin: 20px 0px 20px 0px;">
 					@if($store->avatar->first())<img style="width: 100%; opacity: 0.4" alt="{{ $store->name }}" src="{{ route('imagecache', ['large', $store->avatar->first()->filename]) }}">@endif
 					
 					<div class="description" style="margin: 40px 0px 40px 0px;">
@@ -39,10 +39,8 @@
 
 		<div class="col-sm-9 col-sm-pull-3">
 			<h1>Акции и скидки от {{ $store->name }}</h1>
-			
-            @if(count($sales) >= 1)
-	            @foreach($sales as $sale)
-	            @if(count($sale->avatar) == 1)
+
+@if($sale)
 	                <article style="margin-bottom: 10px; margin-top: 10px;">
 	                        <img width="100%" src="{{ route('imagecache', ['medium', $sale->avatar->first()->filename]) }}" class="img-responsive" alt="{{ $sale->name }}" />
 	                        <div style="float:right; font-size: 8pt;">{{ $sale->created_at->format('d.m.Y') }}</div>
@@ -51,11 +49,26 @@
 	                        <hr>
 	                    
 	                </article>
-	            @endif
-	            @endforeach   
 	        @else
 	        	<div style="text-align: center; margin: 5vw 0px;">На данный момент акций и скидок нет, но скоро будут!</div>
+@endif
+
+<div class="row">
+            @if(count($sales) >= 1)
+	            @foreach($sales as $sale)
+	            @if(count($sale->avatar) == 1)
+	                <article style="margin-bottom: 10px; margin-top: 10px;" class="col-sm-6">
+	                        <img width="100%" src="{{ route('imagecache', ['medium', $sale->avatar->first()->filename]) }}" class="img-responsive" alt="{{ $sale->name }}" />
+	                        <div style="float:right; font-size: 8pt;">{{ $sale->created_at->format('d.m.Y') }}</div>
+	                    	<h2>{{ $sale->name }}</h2>
+	                        <hr>
+	                    
+	                </article>
+	            @endif
+	            @endforeach   
             @endif
+</div>
+
 
 		</div>
 
