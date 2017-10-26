@@ -18,7 +18,7 @@
 			<div class="row">
 				<article class="contacts col-sm-6">
 					<h1>Аренда площадей и размещение</h1>
-					<h4><a href="tel:+380673794934"><span class="glyphicon glyphicon-phone"></span> 067 379 4934</a> - Светлана</h4>
+					<h4><a href="tel:+380973370605"><span class="glyphicon glyphicon-phone"></span>  097 337 0605</a> - Светлана</h4>
 				</article>
 				<article class="contacts col-sm-5 col-sm-offset-1">
 					<h1>Размещение рекламы</h1>
