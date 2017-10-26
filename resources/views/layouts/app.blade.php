@@ -14,7 +14,6 @@
 
 
 
-
 <span id="top"></span>
 
 <header>
@@ -32,16 +31,15 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right navbar2">
             <li><a data-toggle="tooltip" data-placement="bottom" title="Время работы комплекса с 09:00-20:00" href="#"><i class="glyphicon glyphicon-dashboard"></i> 09:00-20:00</a></li>
-            <li><a data-toggle="tooltip" data-placement="bottom" title="Перейти к карте проезда" href="{{ route('index') }}#map"><i class="glyphicon glyphicon-globe"></i> Карта проезда</a></li>
-            <li><a data-toggle="tooltip" data-placement="bottom" title="Позвонить нам сейчас!" href="tel:+380564123456"><i class="glyphicon glyphicon-earphone"></i> (0564) 12-34-56</a></li>
+            <li><a class="animScroll" data-toggle="tooltip" data-placement="bottom" title="Перейти к карте проезда" href="@if(\Request::route()->getName() != 'index') /#map @else #map @endif"><i class="glyphicon glyphicon-globe"></i> Карта проезда</a></li>
+            <li><a data-toggle="tooltip" data-placement="bottom" title="Позвонить нам сейчас!" href="tel:+380973370605"><i class="glyphicon glyphicon-earphone"></i> 097 337 0605</a></li>
           </ul>
           <div>
             <ul class="nav navbar-nav navbar-right navbar1">
                 <li><a href="{{ route('sale.index') }}">Акции и скидки</a></li>
                 <li><a href="{{ route('news.index') }}">Новости и события</a></li>
                 <li><a href="{{ route('store.index') }}">Магазины</a></li>
-                <li><a href="#">Аренда и реклама</a></li>
-                <li><a href="#">Контакты</a></li>
+                <li><a href="{{ route('contacts') }}">Контакты</a></li>
             </ul>
           </div>        
         </div>

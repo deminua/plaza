@@ -39,7 +39,7 @@ const app = new Vue({
  
 
 $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="tooltip"]').tooltip();
 })
 
 function resizeNewsMain() {
@@ -60,7 +60,8 @@ $(window).on('resize', resizeNewsMain );
  resizeNewsMain();
 
 
-$('a[href^="#top"]').on('click', function(event) {
+$('.animScroll').on('click', function(event) {
+//$('a[href^="#top"]').on('click', function(event) {
 
     var target = $(this.getAttribute('href'));
 

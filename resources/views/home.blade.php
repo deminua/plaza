@@ -73,7 +73,7 @@
 
 
 @section('map')
-<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2674.3795610067823!2d33.39064286564099!3d47.909692829205916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40db20bcfadce5eb%3A0x2739d6a0c6f494b4!2z0J_Qu9Cw0LfQsC0zLCDQv9GA0L7RgdC_0LXQutGCINCT0LDQs9Cw0YDRltC90LAsIDTQkCwg0JrRgNC40LLQuNC5INCg0ZbQsywg0JTQvdGW0L_RgNC-0L_QtdGC0YDQvtCy0YHRjNC60LAg0L7QsdC70LDRgdGC0YwsIDUwMDAw!5e0!3m2!1sru!2sua!4v1503396699964" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
+  @include('layouts.map')
 @endsection
 
 

@@ -56,6 +56,7 @@
 @endif
 
             @if(count($sales) >= 1)
+            <div class="row">
 	            @foreach($sales as $sale)
 	            @if(count($sale->avatar) == 1)
 	                <article style="margin-bottom: 10px; margin-top: 10px;" class="col-sm-6">
@@ -69,6 +70,7 @@
 	                </article>
 	            @endif
 	            @endforeach   
+	        </div>
             @endif
 
 

@@ -24,6 +24,11 @@ Route::get('store/{id}', 'StoreController@show')->name('store.show');
 Route::get('news', 'PostController@news')->name('news.index');
 Route::get('sale', 'PostController@sale')->name('sale.index');
 
+Route::get('contacts', function () {
+    return view('layouts.contacts');
+})->name('contacts');
+
+
 Auth::routes();
 
 Route::prefix('admin')->group(function () {
