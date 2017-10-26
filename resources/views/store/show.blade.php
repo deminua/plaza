@@ -37,10 +37,13 @@
 				
 		</div>
 
+
 		<div class="col-sm-9 col-sm-pull-3">
+		
+@if($sale and count($sale->avatar) == 1)
+
 			<h1>Акции и скидки от {{ $store->name }}</h1>
 
-@if($sale)
 	                <article style="margin-bottom: 10px; margin-top: 10px;">
 	                        <img width="100%" src="{{ route('imagecache', ['medium', $sale->avatar->first()->filename]) }}" class="img-responsive" alt="{{ $sale->name }}" />
 	                        <div style="float:right; font-size: 8pt;">{{ $sale->created_at->format('d.m.Y') }}</div>
@@ -49,8 +52,9 @@
 	                        <hr>
 	                    
 	                </article>
+	        	<?php $gallery_class = 'col-sm-12'; ?>
 	        @else
-	        	<div style="text-align: center; margin: 5vw 0px;">На данный момент акций и скидок нет, но скоро будут!</div>
+	        	<?php $gallery_class = 'col-sm-9 col-sm-pull-3'; ?>
 @endif
 
 <div class="row">
@@ -78,7 +82,7 @@
 
 			@if(count($store->gallery) >= 1)
 
-		<article class="col-sm-12" style="margin-bottom: 25px">
+		<article class="{{ $gallery_class }}" style="margin-bottom: 25px">
 			<h1>Галерея {{ $store->name }}</h1>
 			
 
