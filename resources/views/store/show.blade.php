@@ -39,7 +39,7 @@
 
 
 		<div class="col-sm-9 col-sm-pull-3">
-		
+
 @if($sale and count($sale->avatar) == 1)
 
 			<h1>Акции и скидки от {{ $store->name }}</h1>
@@ -122,7 +122,7 @@
 
 			@endif
 
-					<article class="col-sm-12">
+					<article class="{{ $gallery_class }}">
 						<h1>{{ $store->name }}</h1>
 						@if($store->content)
 							<div style="margin-bottom: 25px">{!! nl2br($store->content) !!}</div>
