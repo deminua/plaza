@@ -37,24 +37,22 @@
 				
 		</div>
 
-
 		<div class="col-sm-9 col-sm-pull-3">
-
 @if($sale and count($sale->avatar) == 1)
 
 			<h1>Акции и скидки от {{ $store->name }}</h1>
 
 	                <article style="margin-bottom: 10px; margin-top: 10px;">
+	                        @if(count($sale->avatar) == 1)
 	                        <img width="100%" src="{{ route('imagecache', ['medium', $sale->avatar->first()->filename]) }}" class="img-responsive" alt="{{ $sale->name }}" />
+	                        @endif
 	                        <div style="float:right; font-size: 8pt;">{{ $sale->created_at->format('d.m.Y') }}</div>
 	                    	<h2>{{ $sale->name }}</h2>
 	                        <p>{!! nl2br($sale->description) !!}</p>
 	                        <hr>
 	                    
 	                </article>
-	        	<?php $gallery_class = 'col-sm-12'; ?>
-	        @else
-	        	<?php $gallery_class = 'col-sm-9 col-sm-pull-3'; ?>
+
 @endif
 
 <div class="row">
@@ -62,7 +60,9 @@
 	            @foreach($sales as $sale)
 	            @if(count($sale->avatar) == 1)
 	                <article style="margin-bottom: 10px; margin-top: 10px;" class="col-sm-6">
+	                        @if(count($sale->avatar) == 1)
 	                        <img width="100%" src="{{ route('imagecache', ['medium', $sale->avatar->first()->filename]) }}" class="img-responsive" alt="{{ $sale->name }}" />
+	                        @endif
 	                        <div style="float:right; font-size: 8pt;">{{ $sale->created_at->format('d.m.Y') }}</div>
 	                    	<h2>{{ $sale->name }}</h2>
 	                        <hr>
@@ -74,7 +74,7 @@
 </div>
 
 
-		</div>
+		
 
 
 
@@ -82,7 +82,7 @@
 
 			@if(count($store->gallery) >= 1)
 
-		<article class="{{ $gallery_class }}" style="margin-bottom: 25px">
+		<article style="margin-bottom: 25px">
 			<h1>Галерея {{ $store->name }}</h1>
 			
 
@@ -122,7 +122,8 @@
 
 			@endif
 
-					<article class="{{ $gallery_class }}">
+
+					<article>
 						<h1>{{ $store->name }}</h1>
 						@if($store->content)
 							<div style="margin-bottom: 25px">{!! nl2br($store->content) !!}</div>
@@ -131,7 +132,11 @@
 						@endif
 					</article>
 
-	</div>
+
+</div>
+
+</div>
+
 
 </div>
 </section>

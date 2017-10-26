@@ -29,7 +29,7 @@ class PostController extends Controller
     	];
 
 		$sales = Post::with('store', 'avatar', 'store')->where('confirmed', true)->where('category_id', 1)->orderby('created_at', 'desc')->paginate(8);
-		
+		#dd($sales);
 
        return view('sale.index', compact('meta', 'sales'));
     }

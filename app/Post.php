@@ -37,6 +37,11 @@ class Post extends Model
         return $this->morphMany('App\Image', 'imagegable')->where('avatar', true);
     }
 
+     public function avatars()
+    {
+        return $this->morphMany('App\Image', 'imagegable')->where('avatar', true);
+    }
+
     public function store()
     {
         return $this->belongsTo('App\Store');
