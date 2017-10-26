@@ -55,7 +55,6 @@
 
 @endif
 
-<div class="row">
             @if(count($sales) >= 1)
 	            @foreach($sales as $sale)
 	            @if(count($sale->avatar) == 1)
@@ -71,7 +70,7 @@
 	            @endif
 	            @endforeach   
             @endif
-</div>
+
 
 
 		
