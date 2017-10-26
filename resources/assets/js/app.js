@@ -18,16 +18,22 @@ const app = new Vue({
 });
 
 */
- $(function() {      
-      //Enable swiping...
-      $("#test").swipe( {
-        //Generic swipe handler for all directions
-        swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-          $(this).text("You swiped " + direction );  
-        },
-        //Default is 75px, set to 0 for demo so any distance triggers swipe
-         threshold:0
-      });
+ $(function() {     
+
+
+ $(".carousel").swipe({
+
+  swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+
+    if (direction == 'left') $(this).carousel('next');
+    if (direction == 'right') $(this).carousel('prev');
+
+  },
+  allowPageScroll:"vertical"
+
+});
+
+
     });
 
  
@@ -54,7 +60,7 @@ $(window).on('resize', resizeNewsMain );
  resizeNewsMain();
 
 
-$('a[href^="#"]').on('click', function(event) {
+$('a[href^="#top"]').on('click', function(event) {
 
     var target = $(this.getAttribute('href'));
 
