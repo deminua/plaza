@@ -2,8 +2,8 @@
 
 namespace App;
 
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Post extends Model
 {
@@ -18,11 +18,6 @@ class Post extends Model
         'store_id',
         'created_at'
     ];
-
-    // public function tags()
-    // {
-    //     return $this->morphToMany('App\Slider', 'rowgable');
-    // }
 
     public function sliders()
     {
@@ -54,9 +49,10 @@ class Post extends Model
         return Carbon::parse($value)->format('d.m.Y H:i');
     }
 
-    public function formCreatedAtAttribute($value)
+    //formCreatedAtAttribute
+    public function setCreatedAtAttribute($value)
     {
-        return Carbon::parse($value)->format('Y-m-d H:i:s');
+        return $this->attributes['created_at'] = Carbon::parse($value)->format('Y-m-d H:i:s');
     }
 
 }
