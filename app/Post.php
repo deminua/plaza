@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
@@ -14,7 +15,8 @@ class Post extends Model
 		'content', 
 		'confirmed',
 		'category_id',
-		'store_id'
+        'store_id',
+        'created_at'
     ];
 
     // public function tags()
@@ -46,4 +48,15 @@ class Post extends Model
     {
         return $this->belongsTo('App\Store');
     }
+
+    public function getCreatedAtAttribute($value)
+    {
+        return Carbon::parse($value)->format('d.m.Y H:i');
+    }
+
+    public function formCreatedAtAttribute($value)
+    {
+        return Carbon::parse($value)->format('Y-m-d H:i:s');
+    }
+
 }

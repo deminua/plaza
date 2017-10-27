@@ -9,7 +9,7 @@
 	                        	@endif
 	                        </a>
 	                        <h2>{{ $sale->name }}</h2>
-	                        <div style="font-size: 8pt;">{{ $sale->store->name }}, {{ $sale->store->floor->name }}, {{ $sale->store->shop->name }} | {{ $sale->created_at->format('d.m.Y') }}</div>
+	                        <div style="font-size: 8pt;">{{ $sale->store->name }}, {{ $sale->store->floor->name }}, {{ $sale->store->shop->name }} | {{ $sale->created_at }}</div>
 	                    	<p>{!! nl2br($sale->description) !!}</p>
 	                        <hr>
 	                    

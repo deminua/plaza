@@ -6,5 +6,5 @@
 @endif
 <h2><a href="{{ route('store.show', ['id'=>$new->store->id]) }}">{{ $new->name }}</a></h2>
 <p>{{ $new->description }}</p>
-<div class="info"><span class="left">{{ $new->store->floor->name }}, {{ $new->store->shop->name }}</span><span class="right">{{ $new->created_at->format('d.m.Y') }}</span></div>
+<div class="info"><span class="left">{{ $new->store->floor->name }}, {{ $new->store->shop->name }}</span><span class="right">{{ $new->created_at }}</span></div>
 </article>

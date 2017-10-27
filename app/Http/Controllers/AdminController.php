@@ -173,6 +173,7 @@ class AdminController extends Controller
     	} else {
     		$post = new Post;
     	}
+
     	return view('post.create', compact('post', 'category', 'store'));
     }
 
@@ -202,7 +203,6 @@ class AdminController extends Controller
 
     public function store_post(Request $request)
     {
-
     	$data = $request->except(['_token']);
     	$post = Post::updateOrCreate(['id' => $request->id], $data);
         #$this->multiple_slide_upload($post, $request);

@@ -46,7 +46,7 @@
 	                        @if(count($sale->avatar) == 1)
 	                        <img width="100%" src="{{ route('imagecache', ['medium', $sale->avatar->first()->filename]) }}" class="img-responsive" alt="{{ $sale->name }}" />
 	                        @endif
-	                        <div style="float:right; font-size: 8pt;">{{ $sale->created_at->format('d.m.Y') }}</div>
+	                        <div style="float:right; font-size: 8pt;">{{ $sale->created_at }}</div>
 	                    	<h2>{{ $sale->name }}</h2>
 	                        <p>{!! nl2br($sale->description) !!}</p>
 	                        <hr>
@@ -63,7 +63,7 @@
 	                        @if(count($sale->avatar) == 1)
 	                        <img width="100%" src="{{ route('imagecache', ['medium', $sale->avatar->first()->filename]) }}" class="img-responsive" alt="{{ $sale->name }}" />
 	                        @endif
-	                        <div style="float:right; font-size: 8pt;">{{ $sale->created_at->format('d.m.Y') }}</div>
+	                        <div style="float:right; font-size: 8pt;">{{ $sale->created_at }}</div>
 	                    	<h2>{{ $sale->name }}</h2>
 	                        <hr>
 	                    
