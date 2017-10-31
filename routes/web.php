@@ -22,6 +22,7 @@ Route::get('store', 'StoreController@index')->name('store.index');
 Route::get('store/{id}', 'StoreController@show')->name('store.show');
 
 Route::get('news', 'PostController@news')->name('news.index');
+Route::get('news/{id}', 'PostController@shop_news')->name('news.show');
 Route::get('sale', 'PostController@sale')->name('sale.index');
 
 Route::get('contacts', function () {

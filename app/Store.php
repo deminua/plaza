@@ -51,4 +51,9 @@ class Store extends Model
     {
         return $this->hasMany('App\Post');
     }
+    public function news()
+    {
+        return $this->hasMany('App\Post')->where('confirmed', true)->where('category_id', 2)->limit(4)->orderby('created_at', 'desc');
+    }
+
 }
