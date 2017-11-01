@@ -14,5 +14,3 @@
 	                        <hr>
 	                    
 	                </article>
-
-<center>{{ $sales->links() }}</center>
