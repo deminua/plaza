@@ -26,8 +26,6 @@
 					</section>
 
 
-<center>{{ $sales->links() }}</center>
-
 
     </div>
 </section>
