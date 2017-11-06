@@ -22,7 +22,7 @@
 				</article>
 				<article class="contacts col-sm-5 col-sm-offset-1">
 					<h1>Размещение рекламы</h1>
-					<h4><a href="tel:+380967870076"><span class="glyphicon glyphicon-phone"></span> 096 787 0076</a> - Ирина</h4>
+					<h4><a href="tel:+380967870076"><span class="glyphicon glyphicon-phone"></span> 096 181 50 91‬</a> - Ирина</h4>
 				</article>
 				<article class="contacts col-sm-6">
 					<h1>Контент-менеджер веб ресурса</h1>
