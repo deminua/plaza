@@ -44,7 +44,8 @@ class PostController extends Controller
         $itemPost = Post::whereSlug($slug)->first();
 
         $meta = [
-            'title'=> $itemPost->name . ' - ' . $itemPost->store->name
+            'title'=> $itemPost->name . ' - ' . $itemPost->store->name,
+            'og:image'=>'/storage/images/'.$itemPost->avatar->first()->filename,
         ];
 
        return view('news.show', compact('meta', 'itemPost'));
@@ -55,7 +56,8 @@ class PostController extends Controller
         $itemPost = Post::whereSlug($slug)->first();
 
         $meta = [
-            'title'=> $itemPost->name . ' - ' . $itemPost->store->name
+            'title'=> $itemPost->name . ' - ' . $itemPost->store->name,
+            'og:image'=>'/storage/images/'.$itemPost->avatar->first()->filename,
         ];
 
        return view('sale.show', compact('meta', 'itemPost'));

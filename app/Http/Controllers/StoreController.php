@@ -41,6 +41,7 @@ class StoreController extends Controller
 
     	$meta = [
     		'title'=> $store->name,
+            'og:image'=>'/storage/images/'.$store->avatar->first()->filename,
     	];
 		return view('store.show', compact('meta', 'store', 'sale', 'sales', 'news'));
     }
