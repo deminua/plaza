@@ -47,7 +47,7 @@
 					<div class="description" style="margin: 40px 0px 40px 0px;">
 						<h1>{{ $itemPost->store->name }}</h1>
 						@if($itemPost->store->description)<p>{{ $itemPost->store->description }}</p>@endif
-						<p>Торговый комплекс: {{ $itemPost->store->shop->name }}<br>Этаж: {{ $itemPost->store->floor->name }}</p>
+						<p>Торговый комплекс: {{ $itemPost->store->shop->name }} - {{ $itemPost->store->floor->name }}</p>
 					</div>
 					</article>
 

@@ -17,7 +17,7 @@ class PostController extends Controller
     		'title'=>'Новости и события'
     	];
 
-		$news = Post::with('store', 'avatar')->where('confirmed', true)->where('category_id', 2)->orderby('created_at', 'desc')->paginate(8);
+		$news = Post::with('store', 'avatar')->where('confirmed', true)->where('category_id', 2)->orderby('created_at', 'desc')->paginate(12);
 		
        return view('news.index', compact('meta', 'news'));
     }
@@ -28,7 +28,7 @@ class PostController extends Controller
     		'title'=>'Акции и скидки'
     	];
 
-		$sales = Post::with('store', 'avatar')->where('confirmed', true)->where('category_id', 1)->orderby('created_at', 'desc')->paginate(8);
+		$sales = Post::with('store', 'avatar')->where('confirmed', true)->where('category_id', 1)->orderby('created_at', 'desc')->paginate(12);
 		#dd($sales);
 
        return view('sale.index', compact('meta', 'sales'));
