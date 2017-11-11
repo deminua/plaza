@@ -44,10 +44,10 @@
 
 	                <article style="margin-bottom: 10px; margin-top: 10px;">
 	                        @if(count($sale->avatar) == 1)
-	                        <img width="100%" src="{{ route('imagecache', ['medium', $sale->avatar->first()->filename]) }}" class="img-responsive" alt="{{ $sale->name }}" />
+	                         <a title="{{ $sale->name }}" href="{{ route('sale.show', ['slug'=>$sale->slug, 'store'=>$store->slug]) }}"><img width="100%" src="{{ route('imagecache', ['medium', $sale->avatar->first()->filename]) }}" class="img-responsive" alt="{{ $sale->name }}" /></a>
 	                        @endif
 	                        <div style="float:right; font-size: 8pt;">{{ $sale->created_at }}</div>
-	                    	<h2>{{ $sale->name }}</h2>
+	                    	<h2><a title="{{ $sale->name }}" href="{{ route('sale.show', ['slug'=>$sale->slug, 'store'=>$store->slug]) }}">{{ $sale->name }}</a></h2>
 	                        <p>{!! nl2br($sale->description) !!}</p>
 	                        <hr>
 	                    
@@ -61,10 +61,10 @@
 	            @if(count($sale->avatar) == 1)
 	                <article style="margin-bottom: 10px; margin-top: 10px;" class="col-sm-6">
 	                        @if(count($sale->avatar) == 1)
-	                        <img width="100%" src="{{ route('imagecache', ['medium', $sale->avatar->first()->filename]) }}" class="img-responsive" alt="{{ $sale->name }}" />
+	                        <a title="{{ $sale->name }}" href="{{ route('sale.show', ['slug'=>$sale->slug, 'store'=>$store->slug]) }}"><img width="100%" src="{{ route('imagecache', ['medium', $sale->avatar->first()->filename]) }}" class="img-responsive" alt="{{ $sale->name }}" /></a>
 	                        @endif
 	                        <div style="float:right; font-size: 8pt;">{{ $sale->created_at }}</div>
-	                    	<h2>{{ $sale->name }}</h2>
+	                    	<h2><a title="{{ $sale->name }}" href="{{ route('sale.show', ['slug'=>$sale->slug, 'store'=>$store->slug]) }}">{{ $sale->name }}</a></h2>
 	                        <hr>
 	                    
 	                </article>

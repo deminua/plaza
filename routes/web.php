@@ -11,24 +11,17 @@
 |
 */
 
-
-/*Route::get('/', function () {
-    return view('layouts.disable');
-});*/
-
 Route::get('/', 'HomeController@index')->name('index');
 
-Route::get('store', 'StoreController@index')->name('store.index');
-Route::get('store/{id}', 'StoreController@show')->name('store.show');
-
 Route::get('news', 'PostController@news')->name('news.index');
-Route::get('news/{id}', 'PostController@shop_news')->name('news.show');
+Route::get('news/{store}/{slug}', 'PostController@shop_news')->name('news.show');
+
 Route::get('sale', 'PostController@sale')->name('sale.index');
+Route::get('sale/{store}/{slug}', 'PostController@shop_sale')->name('sale.show');
 
 Route::get('contacts', function () {
     return view('layouts.contacts');
 })->name('contacts');
-
 
 Auth::routes();
 
@@ -55,3 +48,6 @@ Route::prefix('admin')->group(function () {
 	Route::get('image/{id}/{type}', ['uses'=>'ImageController@update','as'=> 'image.update']);
 
 });
+
+Route::get('store', 'StoreController@index')->name('store.index');
+Route::get('{slug}', 'StoreController@show')->name('store.show');

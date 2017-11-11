@@ -1,7 +1,7 @@
 
 
 	                <article class="{{ $class_name }}" style="margin-bottom: 10px; margin-top: 10px;">
-	                        <a title="{{ $sale->name }}" href="{{ route('store.show', ['id'=>$sale->store_id]) }}">
+	                        <a title="{{ $sale->name }}" href="{{ route('sale.show', ['id'=>$sale->slug, 'store'=>$sale->store->slug]) }}">
 	                        	@if($sale->avatar->first())
 	                        	<img src="{{ route('imagecache', ['medium', $sale->avatar->first()->filename]) }}" class="img-responsive" alt="{{ $sale->name }}" />
 	                        	@else

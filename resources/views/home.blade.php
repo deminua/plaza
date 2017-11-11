@@ -13,7 +13,7 @@
             @foreach($sales as $sale)
             @if(count($sale->avatar) == 1)
                 <article class="sale col-sm-6">
-                    <a title="{{ $sale->name }}" href="{{ route('store.show', ['id'=>$sale->store_id]) }}">
+                    <a title="{{ $sale->name }}" href="{{ route('sale.show', ['slug'=>$sale->slug, 'store'=>$sale->store->slug]) }}">
                         <img width="800" height="400" src="{{ route('imagecache', ['medium', $sale->avatar->first()->filename]) }}" class="img-responsive" alt="{{ $sale->name }}" />
                     </a>
                 </article>
@@ -36,7 +36,7 @@
         <article class="row text-center">
             @foreach($stores as $store)
             @if(count($store->avatar) == 1)
-                <a title="{{ $store->name }}" href="{{ route('store.show', ['id'=>$store->id]) }}"><img src="{{ route('imagecache', ['logo', $store->avatar->first()->filename]) }}"></a>
+                <a title="{{ $store->name }}" href="{{ route('store.show', ['slug'=>$store->slug]) }}"><img src="{{ route('imagecache', ['logo', $store->avatar->first()->filename]) }}"></a>
             @endif
             @endforeach
          </article>

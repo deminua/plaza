@@ -27,7 +27,7 @@
 	@if($store->shop_id == $shop->id and count($store->avatar) == 1)
 			
 			<article class="col-xs-6 col-sm-4 col-md-3">
-				<a class="brand" href="{{ route('store.show', ['id'=>$store->id]) }}">
+				<a class="brand" href="{{ route('store.show', ['slug'=>$store->slug]) }}">
 					<img alt="{{ $store->name }}" src="{{ route('imagecache', ['logo', $store->avatar->first()->filename]) }}">
 					<!-- @if($store->description)<p>{{ $store->description }}</p>@endif -->
 				</a>

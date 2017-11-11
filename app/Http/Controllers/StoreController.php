@@ -29,10 +29,11 @@ class StoreController extends Controller
     }
 
 
-    public function show($id)
+    public function show($slug)
     {
+        $store = Store::with('avatar', 'gallery')->whereSlug($slug)->first();
 
-    	$store = Store::with('avatar', 'gallery')->find($id);
+    	//$store = Store::with('avatar', 'gallery')->find($id);
     	
     	$sale = Post::with('avatar')->where('confirmed', true)->where('category_id', 1)->where('store_id', $store->id)->orderby('created_at', 'desc')->first();
         $sales = Post::with('avatar')->where('confirmed', true)->where('category_id', 1)->where('store_id', $store->id)->orderby('created_at', 'desc')->skip(1)->limit(5)->get();

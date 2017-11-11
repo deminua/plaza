@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class Store extends Model
 {
+    use Sluggable;
+    
 	protected $table = 'stores';
 
     protected $fillable = [
@@ -54,6 +57,20 @@ class Store extends Model
     public function news()
     {
         return $this->hasMany('App\Post')->where('confirmed', true)->where('category_id', 2)->limit(4)->orderby('created_at', 'desc');
+    }
+
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 
 }

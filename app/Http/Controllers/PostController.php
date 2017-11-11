@@ -35,10 +35,13 @@ class PostController extends Controller
     }
 
 
-    public function shop_news($id)
+    public function shop_news($store, $slug)
     {
 
-        $itemPost = Post::with('store', 'avatar', 'store.news.avatar', 'store.news.store', 'store.news.store', 'store.floor', 'store.shop')->where('confirmed', true)->where('category_id', 2)->orderby('created_at', 'desc')->find($id);
+/*
+        $itemPost = Post::with('store', 'avatar', 'store.news.avatar', 'store.news.store', 'store.news.store', 'store.floor', 'store.shop')->where('confirmed', true)->where('category_id', 2)->orderby('created_at', 'desc')->find($post);
+*/
+        $itemPost = Post::whereSlug($slug)->first();
 
         $meta = [
             'title'=> $itemPost->name . ' - ' . $itemPost->store->name
@@ -46,5 +49,17 @@ class PostController extends Controller
 
        return view('news.show', compact('meta', 'itemPost'));
     }
+
+    public function shop_sale($store, $slug)
+    {
+        $itemPost = Post::whereSlug($slug)->first();
+
+        $meta = [
+            'title'=> $itemPost->name . ' - ' . $itemPost->store->name
+        ];
+
+       return view('sale.show', compact('meta', 'itemPost'));
+    }
+
 
 }
