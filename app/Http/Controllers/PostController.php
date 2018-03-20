@@ -45,8 +45,15 @@ class PostController extends Controller
 
         $meta = [
             'title'=> $itemPost->name . ' - ' . $itemPost->store->name,
-            'og:image'=>'/storage/images/'.$itemPost->avatar->first()->filename,
         ];
+
+        if(isset($itemPost->avatar->first()->filename)) {
+            $meta['og:image'] = '/storage/images/'.$itemPost->avatar->first()->filename;
+        }
+
+        if(!empty($itemPost->youtube)) {
+            $meta['og:video'] = 'https://youtu.be/' . $itemPost->youtube;
+        }
 
        return view('news.show', compact('meta', 'itemPost'));
     }
@@ -57,9 +64,16 @@ class PostController extends Controller
 
         $meta = [
             'title'=> $itemPost->name . ' - ' . $itemPost->store->name,
-            'og:image'=>'/storage/images/'.$itemPost->avatar->first()->filename,
         ];
 
+        if(isset($itemPost->avatar->first()->filename)) {
+            $meta['og:image'] = '/storage/images/'.$itemPost->avatar->first()->filename;
+        }
+
+        if(!empty($itemPost->youtube)) {
+            $meta['og:video'] = 'https://youtu.be/' . $itemPost->youtube;
+        }
+        
        return view('sale.show', compact('meta', 'itemPost'));
     }
 

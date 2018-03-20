@@ -178,15 +178,38 @@ a, .navbar-toggle, .sales a header, .sales a content, .sales a content, a img {
 #store_show #news {
     background: none;
 }
+
+  .youtube {
+    min-height: 277px;
+    filter: drop-shadow(0 0 3px rgba(0,0,0,.2));
+  }
+
+
 h1 {
     font-weight: 800;
     color: #000;
     text-transform: uppercase;
     margin:10px 0px 0px 0px;
 }
+
+#news, #sale, #catalog_list {
+  .youtube {
+    min-height: 277px;
+  }
+}
+
+#home #news {
+  .youtube {
+    min-height: 180px;
+  }
+}
+
 #news .subtext {
     margin:0px 0px 10px 0px;
 }
+
+
+
 #sale .sale, #news .news {
     padding-bottom: 30px;
 }
@@ -297,6 +320,12 @@ h1 {
     border-radius: 0px;
 }
 
+#store_show {
+    .youtube {
+        min-height:40vh; width: 100%
+    }
+}
+
 #catalog_list, #store_show {
     h1 {
         color: $brand-primary;
@@ -344,3 +373,4 @@ margin-bottom: 20px;
 h2 {
     font-size: 12pt;
 }
+

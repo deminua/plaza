@@ -18,6 +18,13 @@
                     </a>
                 </article>
             @endif
+
+            @if(count($sale->avatar) == 0 and !empty($sale->youtube))
+            <article class="sale col-sm-6">
+              <iframe width="800" height="400" class="youtube img-responsive" src="https://www.youtube.com/embed/{{ $sale->youtube }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </article>
+            @endif
+
             @endforeach        
     </div>
 </section>

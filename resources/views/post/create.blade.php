@@ -20,14 +20,20 @@
 				{!! Form::text('name', null, ['class' => 'form-control', 'required']) !!}
 			</div>
 		
-			<div class="form-group">
-				{!! Form::label('created_at', 'Дата и время') !!}
-				{!! Form::text('created_at', null, ['class' => 'form-control']) !!}
-			</div>
+		<div class="form-group">
+			{!! Form::label('description', 'Краткое описание') !!}
+			{!! Form::textarea('description', null, ['class' => 'form-control', 'rows' => '8']) !!}
+		</div>
+
 		</div>
 
 
         <div class="col-md-6">
+
+			<div class="form-group">
+				{!! Form::label('created_at', 'Дата и время') !!}
+				{!! Form::text('created_at', null, ['class' => 'form-control']) !!}
+			</div>
 
 			<!-- Category Form Input -->
 			<div class="form-group">
@@ -41,6 +47,10 @@
 			    {!! Form::select('store_id', $store, null, ['class' => 'form-control']) !!}
 			</div>
 
+			<div class="form-group">
+				{!! Form::label('youtube', 'Youtube') !!}
+				{!! Form::text('youtube', null, ['class' => 'form-control', 'placeholder'=>'Код: DJ0DM_xZEyc']) !!}
+			</div>
 
 		</div>
 
@@ -48,10 +58,6 @@
 
 <div class="col-md-12">
 
-		<div class="form-group">
-			{!! Form::label('description', 'Краткое описание') !!}
-			{!! Form::textarea('description', null, ['class' => 'form-control', 'rows' => '3']) !!}
-		</div>
 
 		<div class="form-group">
 			{!! Form::label('content', 'Содержание') !!}

@@ -19,7 +19,8 @@ class Post extends Model
 		'confirmed',
 		'category_id',
         'store_id',
-        'created_at'
+        'created_at',
+        'youtube'
     ];
 
     public function sliders()

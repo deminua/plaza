@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $meta['title'] or 'Акции, скидки и новости' }} - Торговый комплекс «Плаза»</title>
+  @if(!empty($meta['og:video']))
+    <meta property="og:video" content="{{ $meta['og:video'] }}" />
+  @else
     <meta property="og:image" content="{{ url('/') }}{{ $meta['og:image'] or '/images/logo.png' }}" />
+  @endif
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     @include('layouts.favicon')
 </head>

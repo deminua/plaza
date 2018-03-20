@@ -19,6 +19,10 @@
 
 				                <article style="margin-bottom: 10px; margin-top: 10px;">
 
+									@if(!empty($itemPost->youtube))
+										<iframe width="800" height="400" class="youtube img-responsive" src="https://www.youtube.com/embed/{{ $itemPost->youtube }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><hr>
+									@endif
+
 				                   <div style="float:right; font-size: 8pt;">{{ $itemPost->created_at }}</div>
 				                   <p>{!! nl2br($itemPost->content) !!}</p>
 				                
